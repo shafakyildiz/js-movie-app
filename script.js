@@ -8,6 +8,8 @@ const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const main = document.getElementById("main");
 getMovies(API_URL);
 
+// Fetching the data from API
+
 function getMovies(url) {
   fetch(url)
     .then((res) => res.json())
@@ -17,6 +19,8 @@ function getMovies(url) {
       showMovies(data.results);
     });
 }
+
+// Show movies by appending main element
 
 function showMovies(data) {
   main.innerHTML = "";
@@ -45,6 +49,8 @@ function showMovies(data) {
     main.appendChild(movieEl);
   });
 }
+
+// Colorizing the rating according to vote_average
 
 function getColor(vote) {
   if (vote >= 8) {
