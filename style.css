@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -98,7 +98,8 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
+  color: #c1c2cc;
+  background-color:rgb(29, 29, 28);
   padding: 1rem;
   max-height: 100%;
   transform: translateY(101%);
