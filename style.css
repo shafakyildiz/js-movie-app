@@ -39,7 +39,7 @@ header {
     color: #7378c5;
 }
 
-main{
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -47,8 +47,46 @@ main{
 
 .movie {
     width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .movie img {
     width: 100%;
+}
+
+.movie-info {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+movie-info span {
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+movie-info span.green {
+    color: lightgreen;
+}
+
+movie-info span.green {
+    color: orange;
+}
+
+movie-info span.green {
+    color: red;
 }
