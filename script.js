@@ -13,6 +13,7 @@ function getMovies(url) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data.results);
+      console.log(main);
       showMovies(data.results);
     });
 }
@@ -23,6 +24,10 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
+    // const movieInf = document.createElement("div");
+    // movieInf.classList.add("movie-info");
+    // const movieOverview = document.createElement("div");
+    // movieOverview.classList.add("overview");
     movieEl.innerHTML = `
     <img
           src="${IMG_URL + poster_path}"
@@ -32,14 +37,16 @@ function showMovies(data) {
         <div class="movie-info">
           <h3>${title}</h3>
           <span class="${getColor(vote_average)}>${vote_average}</span>
-        </div>
+          </div>
+     
 
         <div class="overview">
         <h3>Overview</h3>
-        ${overview} 
+        ${overview}
+        <br/>
         </div>
-        
-        `
+       
+        `;
     main.appendChild(movieEl);
   });
 }
