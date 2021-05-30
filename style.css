@@ -5,11 +5,8 @@
 }
 
 :root {
-  /* --primary-color: #22254b; */
   --primary-color: rgb(23, 23, 24);
   --secondary-color: #1f2024;
-
-  /* --secondary-color: #373b69; */
 }
 
 body {
