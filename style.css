@@ -114,3 +114,16 @@ main {
 .movie:hover .overview {
   transform: translateY(0);
 }
+
+#details {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #c1c2cc;
+  font-size: 14px;
+  font-style: italic;
+  font-family: "Poppins", "sans-serif";
+}

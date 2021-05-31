@@ -31,7 +31,7 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
-    
+
     movieEl.innerHTML = `
     <img
           src="${IMG_URL + poster_path}"
@@ -46,17 +46,21 @@ function showMovies(data) {
         <div class="overview">
         <h3>Overview</h3>
         ${overview}
+        <button id="details">View Details...</button>
         <br/>
         </div>
+
+
        
         `;
     main.appendChild(movieEl);
-    movieEl.addEventListener("click", (e) => {
-      main.innerHTML=""
-      main.innerHTML=  ` <img
+    const detailsButton = document.getElementById("details");
+
+    detailsButton.addEventListener("click", (e) => {
+      main.innerHTML = `<img
       src="${IMG_URL + poster_path}"
       alt="${title}"
-    />`
+    />`;
     });
   });
 }
@@ -84,4 +88,3 @@ form.addEventListener("submit", (e) => {
     getMovies(API_URL);
   }
 });
-
