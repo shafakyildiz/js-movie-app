@@ -115,7 +115,7 @@ main {
   transform: translateY(0);
 }
 
-#details {
+.details {
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
@@ -126,4 +126,5 @@ main {
   font-size: 1rem;
   font-style: italic;
   font-family: "Poppins", "sans-serif";
+  text-decoration: underline;
 }
