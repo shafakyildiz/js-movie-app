@@ -2,7 +2,7 @@
 
 const API_KEY = "api_key=1b5484d18124e1c0063908920ff16f12";
 const BASE_URL = "https://api.themoviedb.org/3";
-const DISCOVER = "/discover/movie?sort_by=popularity.desc&";
+const DISCOVER = "/discover/movie?sort_by=revenue.desc&";
 const API_URL = BASE_URL + DISCOVER + API_KEY;
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const searchURL = BASE_URL + "/search/movie?" + API_KEY;
@@ -28,7 +28,7 @@ function getMovies(url) {
 function showMovies(data) {
   main.innerHTML = "";
   data.forEach((movie) => {
-    const { title, poster_path, vote_average, overview } = movie;
+    const { title, poster_path, vote_average, overview, release_date } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
 
@@ -46,7 +46,7 @@ function showMovies(data) {
         <div class="overview">
         <h3>Overview</h3>
         ${overview}
-        <button id="details">View Details...</button>
+        <button class="details">View Details...</button>
         <br/>
         </div>
 
@@ -54,13 +54,19 @@ function showMovies(data) {
        
         `;
     main.appendChild(movieEl);
-    const detailsButton = document.getElementById("details");
-
-    detailsButton.addEventListener("click", (e) => {
-      main.innerHTML = `<img
-      src="${IMG_URL + poster_path}"
-      alt="${title}"
-    />`;
+    const detailsButtons = document.querySelectorAll(".details");
+    detailsButtons.forEach((detailButton, index) => {
+      console.log(index, data[index]);
+      detailButton.addEventListener("click", (e) => {
+        main.innerHTML = `<img
+        src="${IMG_URL + data[index].poster_path}"
+        alt="${data[index].title}"
+      />
+      <div class="overview">
+      <figcaption><h3>${data[index].title}<br/> <br/>Overview</h3>
+          <p>${data[index].overview} <br/><br/>Release Date: ${data[index].release_date}</p></figcaption>
+          </div>`;
+      });
     });
   });
 }
