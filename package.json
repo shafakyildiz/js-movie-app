@@ -17,7 +17,8 @@
     "url": "https://github.com/shafakyildiz/js-movie-app/issues"
   },
   "homepage": "https://github.com/shafakyildiz/js-movie-app#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "^4.0.2"
   }
 }
