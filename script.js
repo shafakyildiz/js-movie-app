@@ -2,7 +2,7 @@
 
 const API_KEY = "api_key=1b5484d18124e1c0063908920ff16f12";
 const BASE_URL = "https://api.themoviedb.org/3";
-const DISCOVER = "/discover/movie?sort_by=revenue.desc&";
+const DISCOVER = "/discover/movie?sort_by=popularity.desc&";
 const API_URL = BASE_URL + DISCOVER + API_KEY;
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const searchURL = BASE_URL + "/search/movie?" + API_KEY;
@@ -18,9 +18,8 @@ function getMovies(url) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.results);
-      console.log(main);
       showMovies(data.results);
+      console.log(data.results);
     });
 }
 
@@ -32,6 +31,7 @@ function showMovies(data) {
     const { title, poster_path, vote_average, overview } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
+    
     movieEl.innerHTML = `
     <img
           src="${IMG_URL + poster_path}"
@@ -51,6 +51,13 @@ function showMovies(data) {
        
         `;
     main.appendChild(movieEl);
+    movieEl.addEventListener("click", (e) => {
+      main.innerHTML=""
+      main.innerHTML=  ` <img
+      src="${IMG_URL + poster_path}"
+      alt="${title}"
+    />`
+    });
   });
 }
 
@@ -77,3 +84,4 @@ form.addEventListener("submit", (e) => {
     getMovies(API_URL);
   }
 });
+
