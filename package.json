@@ -1,0 +1,23 @@
+{
+  "name": "js-movie-app",
+  "version": "1.0.0",
+  "description": "This is a movie app and you may reach the online version from here:",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shafakyildiz/js-movie-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shafakyildiz/js-movie-app/issues"
+  },
+  "homepage": "https://github.com/shafakyildiz/js-movie-app#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
