@@ -66,6 +66,8 @@ function getColor(vote) {
   }
 }
 
+// Search function
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
