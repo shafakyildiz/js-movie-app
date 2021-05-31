@@ -22,9 +22,10 @@ header {
   background-color: var(--secondary-color);
 }
 
-h2 {
-  color: rgb(185, 14, 14);
+h2, a {
+  color: rgb(185, 14, 14) !important;
   background-color: var(--secondary-color);
+  text-decoration: inherit; 
 }
 
 .search {

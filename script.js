@@ -56,7 +56,7 @@ function showMovies(data) {
         <div id="myModal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <span class="close">&times;</span>
+            <span id="close" class="close">&times;</span>
             <img
               src="${IMG_URL + data[index].poster_path}"
               alt="${data[index].title}"
@@ -64,7 +64,7 @@ function showMovies(data) {
               <figcaption>
                 <h3>
                   ${data[index].title}<br />
-                  <br />Overview
+                  <br/>Overview
                 </h3>
                 <p>
                   ${data[index].overview} <br /><br />Release Date: ${
@@ -74,7 +74,10 @@ function showMovies(data) {
               </figcaption>
           </div>
         </div>
+      
         `;
+
+     
 
         //   main.innerHTML = `
         //   <h2>Modal Example</h2>
@@ -145,7 +148,10 @@ form.addEventListener("keyup", (e) => {
   }
 });
 
-// Sort by rating
+
+
+
+// // Sort by rating
 
 // function sortResults(prop, asc) {
 //   people.sort(function (a, b) {
