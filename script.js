@@ -34,26 +34,20 @@ function showMovies(data) {
     movieEl.classList.add("movie");
 
     movieEl.innerHTML = `
-    <img
-          src="${IMG_URL + poster_path}"
-          alt="${title}"
-        />
+    <img src="${IMG_URL + poster_path}" alt="${title}" />
 
-        <div class="movie-info">
-          <h3>${title}</h3>
-          <span class="${getColor(vote_average)}">${vote_average}</span>
-     
+    <div class="movie-info">
+      <h3>${title}</h3>
+      <span class="${getColor(vote_average)}">${vote_average}</span>
 
-        <div class="overview">
+      <div class="overview">
         <h3>Overview</h3>
         ${overview}
         <button id="myBtn" class="details">View Details...</button>
-        <br/>
-        </div>
-
-
-       
-        `;
+        <br />
+      </div>
+    </div>`;
+    
     main.appendChild(movieEl);
     const detailsButtons = document.querySelectorAll(".details");
     detailsButtons.forEach((detailButton, index) => {
@@ -74,13 +68,13 @@ function showMovies(data) {
                 </h3>
                 <p>
                   ${data[index].overview} <br /><br />Release Date: ${
-                  data[index].release_date }
+          data[index].release_date
+        }
                 </p>
               </figcaption>
           </div>
         </div>
         `;
-
 
         //   main.innerHTML = `
         //   <h2>Modal Example</h2>
